@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace BinarySearchTree
 {
-    class BinaryTree<T>
+    class BinaryTree<T>                                     //declare BinaryTree<T> class
     {
         //HAS
+
         private BinaryTreeNode<T> root = null;
-        public BinaryTreeNode<T> Root
+
+        public BinaryTreeNode<T> Root                       //declaring BinaryTree<T> declares BinaryTreeNode<T> root of null
         {
             get
             {
@@ -29,13 +31,10 @@ namespace BinarySearchTree
         }
 
         //DOES
-
         public virtual void Clear()
         {
             root = null;
         }
-
-
 
         private string DisplayInOrder(BinaryTreeNode<T> current)
         {

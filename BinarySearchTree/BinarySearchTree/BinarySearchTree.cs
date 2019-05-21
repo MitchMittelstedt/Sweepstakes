@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BinarySearchTree
 {
-    class BinarySearchTree<T> : BinaryTree<T>
+    class BinarySearchTree<T> : BinaryTree<T>             //declaring this class declares BinaryTree<T>
     {
         //HAS
         //CONSTRUCTOR

@@ -14,15 +14,19 @@ namespace BinarySearchTree
         private BinaryTreeNode<T> right = null;
         
         //CONSTRUCTOR
-        public BinaryTreeNode()
+
+
+        public BinaryTreeNode()                                                             //empty default contructor
         {
 
         }
-        
-        //DOES
-        public BinaryTreeNode(T item) : this(item, null, null) { }
 
-        public BinaryTreeNode(T item, BinaryTreeNode<T> left, BinaryTreeNode<T> right)
+        public BinaryTreeNode(T item) : this(item, null, null)                              //one perameter constructor assumes item, calls three parameter constructor with null children
+        {
+
+        }
+
+        public BinaryTreeNode(T item, BinaryTreeNode<T> left, BinaryTreeNode<T> right)      //three parameter constructor takes item, left and right children, creates the node with the correct item pointing to the specified left and right
         {
             this.item = item;
             this.left = left;
@@ -63,6 +67,15 @@ namespace BinarySearchTree
                 right = value;
             }
         }
+
+        
+        
+
+        
+        //DOES
+
+
+       
         public override string ToString()
         {
             if (item == null)
