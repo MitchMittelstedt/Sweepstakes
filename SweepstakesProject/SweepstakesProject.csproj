@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{42A99C3D-3E92-454A-9C5B-A9EB2F697890}</ProjectGuid>
+    <ProjectGuid>{2BF32848-3D21-4F79-AC51-89FCC8251911}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>BinarySearchTree</RootNamespace>
-    <AssemblyName>BinarySearchTree</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RootNamespace>SweepstakesProject</RootNamespace>
+    <AssemblyName>SweepstakesProject</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -43,11 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BinarySearchTree.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BinaryTree.cs" />
-    <Compile Include="BinaryTreeNode.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
