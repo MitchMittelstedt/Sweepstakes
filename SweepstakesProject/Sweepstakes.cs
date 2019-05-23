@@ -6,31 +6,71 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    class Sweepstakes
+    public class Sweepstakes
     {
         //HAS
-        public Contestant contestant = new Contestant();
+        public Dictionary<int, Contestant> dictionaryOfContestants = new Dictionary<int, Contestant>();
+        string name;
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+
+            set
+            {
+                if (String.IsNullOrWhiteSpace(value))
+                {
+                    throw new Exception("Last name of contestant cannot be null.");
+                }
+                else
+                {
+                    name = value;
+                }
+            }
+        }
+        public int Size
+        {
+            get
+            {
+                return dictionaryOfContestants.Count();
+            }
+        }
+
+        public int EntryNo
+        {
+            get
+            {
+                return (dictionaryOfContestants.Count + 1);
+            }
+
+        }
+
         //CONSTRUCTOR
-        public Sweepstakes()
+        public Sweepstakes(string name)
         {
-
+            Name = name;
         }
+
         //DOES
-        public void SweepstakesMethod(string name)
-        {
-
-        }
         public void RegisterContestant(Contestant contestant)
         {
-
+            dictionaryOfContestants.Add(EntryNo, contestant);
         }
         public string PickWinner()
         {
-            return "";
+            Random random = new Random();
+            int randomNumber = random.Next(1, Size + 1);
+            Contestant winner = dictionaryOfContestants[randomNumber];
+            string fullName = winner.FirstName + " " + winner.LastName;
+            return fullName;
         }
         public void PrintContestantInfo(Contestant contestant)
         {
-
+            string fullName = contestant.FirstName + " " + contestant.LastName;
+            Console.WriteLine(fullName);
+            Console.WriteLine(contestant.Email);
         }
     }
 }
