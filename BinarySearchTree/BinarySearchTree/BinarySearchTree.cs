@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BinarySearchTree
 {
-    class BinarySearchTree<T> : BinaryTree<T>             //declaring this class declares BinaryTree<T>
+    class BinarySearchTree<T> : BinaryTree<T> where T : IComparable             //declaring this class declares BinaryTree<T>
     {
         //HAS
         //CONSTRUCTOR
@@ -21,9 +21,10 @@ namespace BinarySearchTree
             int compResult;
             BinaryTreeNode<T> current = Root;
             BinaryTreeNode<T> parent = null;
+
             while (current != null)
             {
-                compResult = ((IComparable<T>)(current.Item)).CompareTo(item);
+                compResult = current.Item.CompareTo(item);
 
                 if (compResult == 0)
                 {
@@ -47,7 +48,7 @@ namespace BinarySearchTree
             }
             else
             {
-                compResult = ((IComparable<T>)(parent.Item)).CompareTo(item);
+                compResult = parent.Item.CompareTo(item);
                 if (compResult > 0)
                 {
                     parent.Left = newNode;
